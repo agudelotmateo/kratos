@@ -26,8 +26,8 @@ asset Stock identified by stockId {
 concept Input {
   o String name
   o Integer price
-  o String unit
-  o Integer minimumPurity
+  o String unit default = "Kg"
+  o Integer minimumPurity default = 90
   o Integer currentBought
   o Integer currentReusable
   o Integer usedBought
