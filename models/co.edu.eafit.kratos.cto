@@ -1,0 +1,102 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+namespace co.edu.eafit.kratos
+
+
+asset Stock identified by stockId {
+  o String stockId
+  o Input paperboard
+  o Input polyethylene
+  o Input aluminiumFoil
+  --> Company owner
+}
+
+
+concept Input {
+  o String name
+  o Integer price
+  o String unit
+  o Integer minimumPurity
+  o Integer currentBought
+  o Integer currentReusable
+  o Integer usedBought
+  o Integer usedReusable
+}
+
+
+participant Regulator identified by name {
+  o String name
+}
+
+participant Company identified by name {
+  o String name
+}
+
+participant Classifier identified by name {
+  o String name
+}
+
+
+transaction TetraPakClassifierToCompany {  
+  o Integer paperboard
+  o Integer polyethylene
+  o Integer aluminiumFoil
+  --> Company owner
+}
+
+transaction BuyPaperboard {
+  o Integer amount
+  --> Company buyer
+}
+
+transaction BuyPolyethylene {
+  o Integer amount
+  --> Company buyer
+}
+
+transaction BuyAluminiumFoil {
+  o Integer amount
+  --> Company buyer
+}
+
+transaction UseBoughtPaperboard {
+  o Integer amount
+  --> Company owner
+}
+
+transaction UseReusablePaperboard {
+  o Integer amount
+  --> Company owner
+}
+
+transaction UseBoughtPolyethylene {
+  o Integer amount
+  --> Company owner
+}
+
+transaction UseReusablePolyethylene {
+  o Integer amount
+  --> Company owner
+}
+
+transaction UseBoughtAluminiumFoil {
+  o Integer amount
+  --> Company owner
+}
+
+transaction UseReusableAluminiumFoil {
+  o Integer amount
+  --> Company owner
+}

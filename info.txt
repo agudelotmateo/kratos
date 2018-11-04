@@ -1,0 +1,52 @@
+Fuentes:
+- https://www.tetrapak.com/packaging/materials
+- https://console.bluemix.net/docs/services/blockchain/enterprise_plan.html#about-enterprise-plan
+
+Create company:
+{
+  "name": "Carvajal"
+}
+
+Crear stock (inicial):
+{
+  "stockId": "string",
+  "paperboard": {
+    "name": "string",
+    "price": 0,
+    "unit": "string",
+    "minimumPurity": 0,
+    "currentBought": 0,
+    "currentReusable": 0,
+    "usedBought": 0,
+    "usedReusable": 0
+  },
+  "polyethylene": {
+    "name": "string",
+    "price": 0,
+    "unit": "string",
+    "minimumPurity": 0,
+    "currentBought": 0,
+    "currentReusable": 0,
+    "usedBought": 0,
+    "usedReusable": 0
+  },
+  "aluminiumFoil": {
+    "name": "string",
+    "price": 0,
+    "unit": "string",
+    "minimumPurity": 0,
+    "currentBought": 0,
+    "currentReusable": 0,
+    "usedBought": 0,
+    "usedReusable": 0
+  },
+  "owner": "resource:co.edu.eafit.kratos.Company#nombre:Carvajal"
+}
+
+Comprar aluminio:
+{
+  "amount": 0,
+  "buyer": "resource:co.edu.eafit.kratos.Company#nombre:Carvajal",
+  "transactionId": "string",
+  "timestamp": "2018-11-04T08:51:47.273Z"
+}
