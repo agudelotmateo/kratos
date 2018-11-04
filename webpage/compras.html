@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<hmtl>
+  <head>
+	<meta charset="utf-8" />
+	<meta content="initial-scale=1, width=device-width" name="viewport" />
+
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+	<link href="/static/styles.css" rel="stylesheet" />
+
+	<title>HORUS</title>
+  </head>
+
+  <body>
+	<nav class="navbar navbar-default box-shadow--small" role="navigation">
+	  <div class="container-fluid">
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		  </button>
+		  <a class="navbar-brand" href="">
+
+			HORUS</a>
+		</div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		  <ul class="nav navbar-nav">
+			<li><a class="panel-heading" href="/forecasting">Inventario</a></li>
+		  </ul>
+		</div>
+	  </div>
+	</nav>
+
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
+------------------------------
+
+<!DOCTYPE html>
+<html>
+  <head>
+	<style>
+	  table, th, td {
+	  border: 1px solid black;
+	  border-collapse: collapse;
+	  }
+	  th, td {
+	  padding: 5px;
+	  text-align: left;
+	  }
+	</style>
+  </head>
+  <body>
+
+	<h2>HORUS</h2>
+	<p>Compras</p>
+	<p>Inventario</p>
+
+	<table style="width:100%">
+	  <tr>
+		<th>Estado</th>
+		<th>Insumo</th>
+		<th>Cantidades</th>
+		<th>Unidades Compradas</th>
+		<th>Unidades Recicladas</th>
+		<th>Histórico Comprado</th>
+		<th>Histórico Reciclado</th>
+		<th>Registrar Compra</th>
+	  </tr>
+	  <tr>
+		<td></td>
+		<td>Polyethylene</td>
+		<td>200</td>
+		<td>-</td>
+		<td>-</td>
+		<td>10.000</td>
+		<td>1.200</td>
+		<td>TEXTBOX
+		  <button>Registrar Compra</button></td>
+	  </tr>
+	  <tr>
+		<td><center>/!\</center></td>
+		<td>Paperboard</td>
+		<td>80</td>
+		<td>70</td>
+		<td>10</td>
+		<td>4.000</td>
+		<td>200</td>
+		<td>REGISTRADO</td>
+	  </tr>
+	  <tr>
+		<td></td>
+		<td>Aluminium</td>
+		<td>140</td>
+		<td>100</td>
+		<td>40</td>
+		<td>5.000</td>
+		<td>180</td>
+		<td>REGISTRADO</td>
+	  </tr>
+
+	</table>
+
+  </body>
+  </html>
