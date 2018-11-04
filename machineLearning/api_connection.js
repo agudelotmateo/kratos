@@ -37,38 +37,44 @@ function apiPost(scoring_url, token, payload, loadCallback, errorCallback){
 	oReq.send(payload);
 }
 
-apiGet(wml_credentials.get("url"),
-	wml_credentials.get("username"),
-	wml_credentials.get("password"),
-	function (res) {
-        let parsedGetResponse;
-        try {
-            parsedGetResponse = JSON.parse(this.responseText);
-        } catch(ex) {
-            // TODO: handle parsing exception
-        }
-        if (parsedGetResponse && parsedGetResponse.token) {
-            const token = parsedGetResponse.token
-            const wmlToken = "Bearer " + token;
+function predict(quantity,purity){
 
-			const payload = '{"fields": ["insumo", "pureza"], "values": [[1000,1]]}';
-			const scoring_url = "https://us-south.ml.cloud.ibm.com/v3/wml_instances/b04dc04b-98ad-45fb-9260-c6998a722d9b/deployments/a430a8b0-2fae-4af4-a525-b0f5271c9513/online";
+	apiGet(wml_credentials.get("url"),
+		   wml_credentials.get("username"),
+		   wml_credentials.get("password"),
+		   function (res) {
+			   let parsedGetResponse;
+			   try {
+				   parsedGetResponse = JSON.parse(this.responseText);
+			   } catch(ex) {
+				   // TODO: handle parsing exception
+			   }
+			   if (parsedGetResponse && parsedGetResponse.token) {
+				   const token = parsedGetResponse.token
+				   const wmlToken = "Bearer " + token;
+				   
+				   const payload = `{"fields": ["insumo", "pureza"], "values": [[${parseInt(quantity)},${parseFloat(purity)}]]}`;
+				   const scoring_url = "https://us-south.ml.cloud.ibm.com/v3/wml_instances/b04dc04b-98ad-45fb-9260-c6998a722d9b/deployments/a430a8b0-2fae-4af4-a525-b0f5271c9513/online";
 
-            apiPost(scoring_url, wmlToken, payload, function (resp) {
-                let parsedPostResponse;
-                try {
-                    parsedPostResponse = JSON.parse(this.responseText).values;
-                } catch (ex) {
-                    // TODO: handle parsing exception
-                }
-                console.log("Scoring response");
-                console.log(parsedPostResponse);
-            }, function (error) {
-                console.log(error);
-            });
-        } else {
-            console.log("Failed to retrieve Bearer token");
-        }
-	}, function (err) {
-		console.log(err);
-	});
+				   apiPost(scoring_url, wmlToken, payload, function (resp) {
+					   let parsedPostResponse;
+					   try {
+						   parsedPostResponse = JSON.parse(this.responseText).values;
+					   } catch (ex) {
+						   //...
+					   }
+					   console.log("Scoring response");
+					   console.log(parsedPostResponse);
+				   }, function (error) {
+					   console.log(error);
+				   });
+			   } else {
+				   console.log("Failed to retrieve Bearer token");
+			   }
+		   }, function (err) {
+			   console.log(err);
+		   });
+}
+
+
+predict(1000,1)
