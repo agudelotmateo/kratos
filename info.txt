@@ -2,13 +2,7 @@ Fuentes:
 - https://www.tetrapak.com/packaging/materials
 - https://console.bluemix.net/docs/services/blockchain/enterprise_plan.html#about-enterprise-plan
 
-Create company:
-{
-  "name": "Carvajal",
-  "stock": "stock-Carvajal"
-}
-
-Crear stock (inicial):
+1. Crear stock (inicial):
 {
   "stockId": "stock-Carvajal",
   "paperboard": {
@@ -43,15 +37,31 @@ Crear stock (inicial):
   }
 }
 
+2. Crear empresa:
+{
+  "name": "Carvajal",
+  "stock": "stock-Carvajal"
+}
+
+
+3. Transferir residuos recuperados por el clasificador a la empresa (materiales reutilizables):
+{
+  "paperboard": 10,
+  "polyethylene": 10,
+  "aluminiumFoil": 10,
+  "owner": "resource:co.edu.eafit.kratos.Company#Carvajal"
+}
+
+4. Comprar carton
+{
+  "amount": 10,
+  "buyer": "resource:co.edu.eafit.kratos.Company#Carvajal"
+}
+
 Comprar aluminio:
 {
   "amount": 999,
   "buyer": "resource:co.edu.eafit.kratos.Company#Carvajal"
 }
 
-{
-  "paperboard": 1,
-  "polyethylene": 1,
-  "aluminiumFoil": 1,
-  "owner": "resource:co.edu.eafit.kratos.Company#Carvajal"
-}
+
