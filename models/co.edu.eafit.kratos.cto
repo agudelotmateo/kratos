@@ -20,7 +20,6 @@ asset Stock identified by stockId {
   o Input paperboard
   o Input polyethylene
   o Input aluminiumFoil
-  --> Company owner
 }
 
 
@@ -42,6 +41,7 @@ participant Regulator identified by name {
 
 participant Company identified by name {
   o String name
+  --> Stock stock
 }
 
 participant Classifier identified by name {

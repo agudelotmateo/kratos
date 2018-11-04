@@ -4,12 +4,13 @@ Fuentes:
 
 Create company:
 {
-  "name": "Carvajal"
+  "name": "Carvajal",
+  "stock": "stock-Carvajal"
 }
 
 Crear stock (inicial):
 {
-  "stockId": "string",
+  "stockId": "stock-Carvajal",
   "paperboard": {
     "name": "string",
     "price": 0,
@@ -39,14 +40,18 @@ Crear stock (inicial):
     "currentReusable": 0,
     "usedBought": 0,
     "usedReusable": 0
-  },
-  "owner": "resource:co.edu.eafit.kratos.Company#nombre:Carvajal"
+  }
 }
 
 Comprar aluminio:
 {
-  "amount": 0,
-  "buyer": "resource:co.edu.eafit.kratos.Company#nombre:Carvajal",
-  "transactionId": "string",
-  "timestamp": "2018-11-04T08:51:47.273Z"
+  "amount": 999,
+  "buyer": "resource:co.edu.eafit.kratos.Company#Carvajal"
+}
+
+{
+  "paperboard": 1,
+  "polyethylene": 1,
+  "aluminiumFoil": 1,
+  "owner": "resource:co.edu.eafit.kratos.Company#Carvajal"
 }
